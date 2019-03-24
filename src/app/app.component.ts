@@ -28,10 +28,10 @@ content1 = 'var a = 3;';
       extraKeys: {'Ctrl-Space': 'autocomplete'},
       hint: CodeMirror.hint.sql,
       hintOptions: {
-          tables: {
-              table1: [ 'col_A', 'col_B', 'col_C' ],
-              table2: [ 'other_columns1', 'other_columns2' ]
-          }
+        tables: {
+          table1: [ 'col_A', 'col_B', 'col_C' ],
+          table2: [ 'other_columns1', 'other_columns2' ]
+        }
       }
     };
   }
@@ -39,6 +39,24 @@ content1 = 'var a = 3;';
   ngAfterViewInit(): void {
     // console.log(this.codemirrorComponent);
     this.codemirrorComponent.forEach((a: any) => console.log(a.codeMirror.options));
+
+
+    const editor = CodeMirror(document.getElementById('codeeditor'), {
+      value: '',
+      mode: 'sql',
+      theme: 'material',
+      tabSize: 5,
+      lineNumbers: true,
+      // firstLineNumber: 50,
+      extraKeys: {'Ctrl-Space': 'autocomplete'},
+      hint: CodeMirror.hint.sql,
+          hintOptions: {
+              tables: {
+                  table1: [ 'col_A', 'col_B', 'col_C' ],
+                  table2: [ 'other_columns1', 'other_columns2' ]
+              }
+          }
+    });
   }
 
   ngAfterContentInit() {
