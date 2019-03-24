@@ -2,14 +2,10 @@
 <ngx-codemirror
   #firstEditor
   [(ngModel)]="content"
-  [options]="{
-    lineNumbers: true,
-    theme: 'material',
-    mode: 'sql'
-  }"
+  [options]="options1"
   [name]="'first-editor'"
 ></ngx-codemirror>
-<br>
+<!-- <br>
 <ngx-codemirror
   #firstEditor1
   [(ngModel)]="content1"
@@ -22,4 +18,4 @@
   [name]="'first-editor1'"
 ></ngx-codemirror>
 <input type="text" #myInput>
-{{content}}
+{{content}} -->
